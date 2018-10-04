@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+      "padding": 5,
+    }
+  }
+>
+  <TextInput
+    allowFontScaling={true}
+    onChangeText={[Function]}
+    placeholder="Write title here"
+    style={
+      Object {
+        "padding": 10,
+        "width": 280,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`title renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+      "padding": 5,
+    }
+  }
+>
+  <TextInput
+    allowFontScaling={true}
+    onChangeText={[Function]}
+    placeholder="Write title here"
+    style={
+      Object {
+        "padding": 10,
+        "width": 280,
+      }
+    }
+  />
+</View>
+`;
