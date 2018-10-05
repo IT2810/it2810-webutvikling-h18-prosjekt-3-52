@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoteText renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+      "padding": 5,
+    }
+  }
+>
+  <TextInput
+    allowFontScaling={true}
+    multiline={true}
+    onChangeText={[Function]}
+    placeholder="Write note here..."
+    style={
+      Object {
+        "backgroundColor": "beige",
+        "padding": 5,
+        "width": 280,
+      }
+    }
+  />
+</View>
+`;
