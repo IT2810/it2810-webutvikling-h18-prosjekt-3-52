@@ -2,6 +2,7 @@ import React from 'react';
 import { Platform, StatusBar, StyleSheet, ScrollView } from 'react-native';
 import NotePicture from './components/NoteView/NoteMain/NotePicture.js';
 import Title from './components/NoteView/NoteMain/Title.js';
+import NoteText from './components/NoteView/NoteMain/NoteText.js';
 
 
 export default class App extends React.Component {
@@ -10,6 +11,7 @@ export default class App extends React.Component {
 		return(
 		<ScrollView>	
 		<Title/>
+		<NoteText/>
 		<NotePicture/>
 		</ScrollView>
 		);

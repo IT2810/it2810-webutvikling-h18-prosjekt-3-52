@@ -59,6 +59,9 @@ exports[`NotePicture renders correctly 1`] = `
               "padding": 8,
               "textAlign": "center",
             },
+            Object {
+              "color": "#B8860B",
+            },
           ]
         }
       >
@@ -69,7 +72,7 @@ exports[`NotePicture renders correctly 1`] = `
   <View
     style={
       Object {
-        "backgroundColor": "#DCDCDC",
+        "backgroundColor": "beige",
         "borderColor": "black",
         "borderWidth": 1,
         "height": 300,

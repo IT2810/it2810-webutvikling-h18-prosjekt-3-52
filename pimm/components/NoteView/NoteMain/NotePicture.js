@@ -15,9 +15,10 @@ export default class NotePicture extends React.Component{
         <Button
           title="Pick an image that fits to your note"
           onPress={this.pickImage}
-		  style={{ width:280 }}
+		  color="#B8860B"
+		  style={{ width: 280 }}
         />
-		<View style={{ borderColor: 'black', borderWidth: 1, backgroundColor: '#DCDCDC', width: 280, height: 300 }}>
+		<View style={{ borderColor: 'black', borderWidth: 1, backgroundColor: 'beige', width: 280, height: 300 }}>
         <Image source={{ uri: image }} style={{ width: 280, height: 300 }} />
 		</View>
       </View>
@@ -28,7 +29,6 @@ export default class NotePicture extends React.Component{
     let result = await ImagePicker.launchImageLibraryAsync({
       allowsEditing: false,
     });
-
 
     if (!result.cancelled) {
       this.setState({ image: result.uri });

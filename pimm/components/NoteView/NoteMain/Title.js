@@ -20,7 +20,7 @@ export default class Title extends React.Component{
 			<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 5 }}>
 			<TextInput 
 			placeholder="Write title here"
-			style={{padding: 10, width: 280}}
+			style={{padding: 10, width: 280, backgroundColor: 'beige', fontWeight: 'bold', fontSize: 20}}
 			onChangeText={(title) => this.changeTitle(title)}
 			/>
 			</View>		
