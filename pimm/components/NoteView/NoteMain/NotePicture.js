@@ -32,6 +32,9 @@ export default class NotePicture extends React.Component{
 
     if (!result.cancelled) {
       this.setState({ image: result.uri });
+	  this.props.sendImageUp(result.uri);
+	  
     }
+	
   };
 }
