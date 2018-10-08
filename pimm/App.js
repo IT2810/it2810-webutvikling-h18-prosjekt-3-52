@@ -11,12 +11,8 @@ export default class App extends React.Component {
 
 	render(){
 		return(
-
-		<SaveButton/>
-		<Title/>
-		<NoteText/>
-		<NotePicture/>
 		<ScrollView>
+		<SaveButton/>
 		<NoteMain/>
 		</ScrollView>
 		);
