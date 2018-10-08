@@ -1,15 +1,25 @@
 import React from 'react';
-import { AsyncStorage } from "react-native";
+import { AsyncStorage, Text, View, Button, Alert } from 'react-native';
+import {NotePicture} from '../NoteMain/NotePicture.js';
+import {Title} from '../NoteMain/Title.js';
+import {NoteText} from '../NoteMain/NoteText.js';
 
-class SaveButton extends Component{
-
-}
-
-_storeData = async () => {
-  try {
-    await AsyncStorage.setItem(this.props.title, this.props);
-  } catch (error) {
-    // Error saving data
-    console.log("Couldn't save")
+export default class SaveButton extends React.Component{
+  render(){
+      return (
+        <Button
+          onPress= {() => this.SaveNote()}
+          title="Save note"
+        />);
   }
+
+  SaveNote = async () => {
+      try {
+        await AsyncStorage.setItem(this.props.Title,
+            [this.props.note, this.props.image]);
+      } catch (error) {
+        // Error saving data
+        Alert.alert("couldn't save")
+      }
+    };
 }
