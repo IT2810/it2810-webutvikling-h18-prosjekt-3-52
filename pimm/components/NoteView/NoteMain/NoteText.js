@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, TextInput, View } from 'react-native';
 
-export default class Title extends React.Component{
+export default class NoteText extends React.Component{
 	constructor(props){
 		super(props);
 		this.state={
@@ -15,15 +15,19 @@ export default class Title extends React.Component{
 	
 	}
 	
+	handleChange(newNote){
+		this.changeNote(newNote);
+		this.props.sendNoteUp(newNote);
+	}
+	
 	render() {
 		return(
 			<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 5 }}>
 			<TextInput 
 			placeholder="Write note here..."
 			multiline = {true}
-			//numberOfLines = {6}
 			style={{padding: 5, width: 280, backgroundColor: 'beige'}}
-			onChangeText={(note) => this.changeNote(note)}
+			onChangeText={(note) => this.handleChange(note)}
 			/>
 			</View>		
 		);
