@@ -12,12 +12,11 @@ export default class App extends React.Component {
 	render(){
 		return(
 
-		<ScrollView>
 		<SaveButton/>
 		<Title/>
 		<NoteText/>
 		<NotePicture/>
-		<ScrollView>	
+		<ScrollView>
 		<NoteMain/>
 		</ScrollView>
 		);
