@@ -15,13 +15,18 @@ export default class Title extends React.Component{
 	
 	}
 	
+	handleChange(newTitle){
+		this.changeTitle(newTitle);
+		this.props.sendTitleUp(newTitle);
+	}
+	
 	render() {
 		return(
 			<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 5 }}>
 			<TextInput 
 			placeholder="Write title here"
 			style={{padding: 10, width: 280, backgroundColor: 'beige', fontWeight: 'bold', fontSize: 20}}
-			onChangeText={(title) => this.changeTitle(title)}
+			onChangeText={(title) => this.handleChange(title)}
 			/>
 			</View>		
 		);
