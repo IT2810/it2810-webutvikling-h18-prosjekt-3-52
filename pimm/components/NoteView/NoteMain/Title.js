@@ -1,5 +1,6 @@
 import React from 'react';
-import { Text, TextInput, View } from 'react-native';
+import { Text, TextInput, View, Button, AsyncStorage } from 'react-native';
+import SaveButton from '../NoteTopBar/SaveButton.js';
 
 export default class Title extends React.Component{
 	constructor(props){
@@ -20,6 +21,14 @@ export default class Title extends React.Component{
 		this.props.sendTitleUp(newTitle);
 	}
 	
+	componentWillReceiveProps(nextProps){
+		if(this.props.title!==nextProps.title){
+			this.setState({title: nextProps.title});
+		}
+	}
+	
+	
+	
 	render() {
 		return(
 			<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 5 }}>
@@ -27,6 +36,7 @@ export default class Title extends React.Component{
 			placeholder="Write title here"
 			style={{padding: 10, width: 280, backgroundColor: 'beige', fontWeight: 'bold', fontSize: 20}}
 			onChangeText={(title) => this.handleChange(title)}
+			value={this.state.title}
 			/>
 			</View>		
 		);

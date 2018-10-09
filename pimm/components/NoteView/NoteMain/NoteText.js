@@ -20,6 +20,12 @@ export default class NoteText extends React.Component{
 		this.props.sendNoteUp(newNote);
 	}
 	
+	componentWillReceiveProps(nextProps){
+		if(this.props.note!==nextProps.note){
+			this.setState({note: nextProps.note});
+		}
+	}
+	
 	render() {
 		return(
 			<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 5 }}>
@@ -28,6 +34,7 @@ export default class NoteText extends React.Component{
 			multiline = {true}
 			style={{padding: 5, width: 280, backgroundColor: 'beige'}}
 			onChangeText={(note) => this.handleChange(note)}
+			value={this.state.note}
 			/>
 			</View>		
 		);

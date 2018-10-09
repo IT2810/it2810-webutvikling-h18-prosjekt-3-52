@@ -2,7 +2,7 @@ import React from 'react';
 import Title from './NoteMain/Title.js';
 import NoteText from './NoteMain/NoteText.js';
 import NotePicture from './NoteMain/NotePicture.js';
-import { View } from 'react-native';
+import { View, Button } from 'react-native';
 
 export default class NoteMain extends React.Component{
 	constructor(props){
@@ -14,22 +14,13 @@ export default class NoteMain extends React.Component{
 		}
 	}
 	
-	getTitle(newTitle){
-		this.setState({title: newTitle});
-	}
-	getNote(newNote){
-		this.setState({note: newNote});
-	}
-	getImage(newImage){
-		this.setState({image: newImage});
-	}
 	
 	render(){
 		return(
 		<View>
-		<Title sendTitleUp={this.getTitle.bind(this)}/>
-		<NoteText sendNoteUp={this.getNote.bind(this)}/>
-		<NotePicture sendImageUp={this.getImage.bind(this)}/>
+		<Title sendTitleUp={this.props.sendTitleUp} title={this.props.title}/>
+		<NoteText sendNoteUp={this.props.sendNoteUp} note={this.props.note}/>
+		<NotePicture sendImageUp={this.props.sendImageUp} image={this.props.image}/>
 		</View>
 		
 		);

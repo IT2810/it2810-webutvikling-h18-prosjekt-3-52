@@ -16,7 +16,7 @@ export default class NotePicture extends React.Component{
           title="Pick an image that fits to your note"
           onPress={this.pickImage}
 		  color="#B8860B"
-		  style={{ width: 280 }}
+		  
         />
 		<View style={{ borderColor: 'black', borderWidth: 1, backgroundColor: 'beige', width: 280, height: 300 }}>
         <Image source={{ uri: image }} style={{ width: 280, height: 300 }} />
@@ -24,6 +24,12 @@ export default class NotePicture extends React.Component{
       </View>
     );
   }
+  
+	componentWillReceiveProps(nextProps){
+		if(this.props.image!==nextProps.image){
+			this.setState({image: nextProps.image});
+		}
+	}
 
   pickImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({

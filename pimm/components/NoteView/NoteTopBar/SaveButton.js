@@ -1,25 +1,34 @@
 import React from 'react';
 import { AsyncStorage, Text, View, Button, Alert } from 'react-native';
 import {NotePicture} from '../NoteMain/NotePicture.js';
-import {Title} from '../NoteMain/Title.js';
+import Title from '../NoteMain/Title.js';
 import {NoteText} from '../NoteMain/NoteText.js';
 
 export default class SaveButton extends React.Component{
   render(){
       return (
+		<View style={{width: 100}}>
         <Button
-          onPress= {() => this.SaveNote()}
+          onPress={this.saveNote}
           title="Save note"
-        />);
+		  color="#B8860B"
+        />
+		</View>);
   }
+  
+  	saveNote = async () => {
+		let obj={
+			title: this.props.title,
+			note: this.props.note,
+			image: this.props.image
+		}
+		try {
+			await AsyncStorage.setItem(this.props.title, JSON.stringify(obj));
+		} catch (error) {
+			alert("Couldn't save")
+		}
+	}
+  
 
-  SaveNote = async () => {
-      try {
-        await AsyncStorage.setItem(this.props.Title,
-            [this.props.note, this.props.image]);
-      } catch (error) {
-        // Error saving data
-        Alert.alert("couldn't save")
-      }
-    };
+
 }
