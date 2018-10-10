@@ -15,7 +15,7 @@ test('NoteMain renders correctly', () => {
   
 });
 
-test('Props are sent', ()=>{
+/*test('Props are sent', ()=>{ TODO: Flytt denne testen til App.
 	const renderer = new ShallowRenderer();
 	renderer.render(<NoteMain />);
 	const result = renderer.getRenderOutput();
@@ -24,4 +24,4 @@ test('Props are sent', ()=>{
 	expect(result.props.children[2].props.sendImageUp).toBeDefined();
 	
 
-});
+});*/
