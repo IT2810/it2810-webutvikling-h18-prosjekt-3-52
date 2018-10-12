@@ -7,6 +7,7 @@ import SaveButton from './components/NoteView/NoteTopBar/SaveButton.js';
 import NoteTopBar from './components/NoteView/NoteTopBar.js';
 import NoteMain from './components/NoteView/NoteMain.js';
 import NoteView from './components/NoteView.js';
+import StartView from './components/StartView.js';
 import { AsyncStorage, Button } from 'react-native';
 
 
@@ -17,46 +18,60 @@ export default class App extends React.Component {
 			title: "",
 			note: "",
 			image: "",
-			chosenNote: "",
+			view: true,
+			fromLoaded: false,
+			oldTitle: "",
 		}
 	}
 	
+	changeView(){
+		this.setState({view: !this.state.view});
+	}
 	
 	getTitle(newTitle){
 		this.setState({title: newTitle});
 	}
 	getNote(newNote){
 		this.setState({note: newNote});
+		
 	}
 	getImage(newImage){
 		this.setState({image: newImage});
+		
 	}
 	
-	loadTitle = async () => {
-		try {
-			//TODO: Lagre og laste fungerer nå. Når miniatyrene er ferdig så lagres tittelen i chosenNote og vi bytter ut Test (linja under) med this.state.chosenNote.
-			//Hvis du vil teste lagring og lasting så må tittelen være Test 
-			let result = await AsyncStorage.getItem("Test");
-			if (result !== null) {
-				let parsed=JSON.parse(result);
-				this.setState({title: parsed.title, note: parsed.note, image: parsed.image});
-			}
-		} catch (error) {
-			// Error retrieving data
-			}
+	fromLoadedF(){
+		this.setState({fromLoaded: false});
 	}
-
+	
+	fromLoadedT(){
+		this.setState({fromLoaded: true});
+	}
+	
+	changeOldTitle(title){
+		this.setState({oldTitle: title});
+	}
+	
+	
+	
+	
 	render(){
+		console.log(this.state);
+		if(this.state.view===true){
 		return(
-		<ScrollView>
-		<NoteView sendTitleUp={this.getTitle.bind(this)} sendNoteUp={this.getNote.bind(this)} 
-		sendImageUp={this.getImage.bind(this)} title={this.state.title} note={this.state.note} image={this.state.image}/>
-		<Button
-		title="load"
-		onPress={this.loadTitle}
-		/>
-		</ScrollView>
-		);
+			<ScrollView style={{paddingTop: 22}}>
+			<StartView changeView={this.changeView.bind(this)} sendTitleUp={this.getTitle.bind(this)} sendNoteUp={this.getNote.bind(this)} 
+			sendImageUp={this.getImage.bind(this)} sfl={this.fromLoadedT.bind(this)} changeOldTitle={this.changeOldTitle.bind(this)}/>
+			</ScrollView>);
+		}else{
+			return(
+			<ScrollView style={{paddingTop: 22}}>
+			<NoteView oldTitle={this.state.oldTitle} changeView={this.changeView.bind(this)} sendTitleUp={this.getTitle.bind(this)} sendNoteUp={this.getNote.bind(this)}
+			sendImageUp={this.getImage.bind(this)} title={this.state.title} note={this.state.note} image={this.state.image} fl={this.state.fromLoaded} sfl={this.fromLoadedF.bind(this)}/>
+			</ScrollView>
+			);
+		}
+		
 	}
 
 }

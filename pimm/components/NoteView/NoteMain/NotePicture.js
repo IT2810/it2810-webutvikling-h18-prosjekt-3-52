@@ -26,8 +26,9 @@ export default class NotePicture extends React.Component{
   }
   
 	componentWillReceiveProps(nextProps){
-		if(this.props.image!==nextProps.image){
+		if(this.props.image!==nextProps.image || nextProps.fl){
 			this.setState({image: nextProps.image});
+			this.props.sfl();
 		}
 	}
 

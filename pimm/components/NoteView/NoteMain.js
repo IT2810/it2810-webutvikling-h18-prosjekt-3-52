@@ -18,9 +18,9 @@ export default class NoteMain extends React.Component{
 	render(){
 		return(
 		<View>
-		<Title sendTitleUp={this.props.sendTitleUp} title={this.props.title}/>
-		<NoteText sendNoteUp={this.props.sendNoteUp} note={this.props.note}/>
-		<NotePicture sendImageUp={this.props.sendImageUp} image={this.props.image}/>
+		<Title sendTitleUp={this.props.sendTitleUp} title={this.props.title} fl={this.props.fl} sfl={this.props.sfl}/>
+		<NoteText sendNoteUp={this.props.sendNoteUp} note={this.props.note} fl={this.props.fl} sfl={this.props.sfl}/>
+		<NotePicture sendImageUp={this.props.sendImageUp} image={this.props.image} fl={this.props.fl} sfl={this.props.sfl}/>
 		</View>
 		
 		);

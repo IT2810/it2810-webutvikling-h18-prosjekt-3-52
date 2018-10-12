@@ -21,8 +21,9 @@ export default class NoteText extends React.Component{
 	}
 	
 	componentWillReceiveProps(nextProps){
-		if(this.props.note!==nextProps.note){
+		if(this.props.note!==nextProps.note || nextProps.fl){
 			this.setState({note: nextProps.note});
+			this.props.sfl();
 		}
 	}
 	

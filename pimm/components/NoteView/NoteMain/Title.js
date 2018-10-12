@@ -22,8 +22,10 @@ export default class Title extends React.Component{
 	}
 	
 	componentWillReceiveProps(nextProps){
-		if(this.props.title!==nextProps.title){
+		if(this.props.title!==nextProps.title || nextProps.fl){
 			this.setState({title: nextProps.title});
+			this.props.sfl();
+			
 		}
 	}
 	

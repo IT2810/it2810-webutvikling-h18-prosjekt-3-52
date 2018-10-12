@@ -17,12 +17,14 @@ export default class SaveButton extends React.Component{
   }
   
   	saveNote = async () => {
+		
 		let obj={
 			title: this.props.title,
 			note: this.props.note,
 			image: this.props.image
 		}
 		try {
+			await AsyncStorage.removeItem(this.props.oldTitle);
 			await AsyncStorage.setItem(this.props.title, JSON.stringify(obj));
 		} catch (error) {
 			alert("Couldn't save")
