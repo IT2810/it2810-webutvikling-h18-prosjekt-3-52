@@ -1,10 +1,11 @@
 import React from 'react';
 import { Image, Button, View } from 'react-native';
-import { ImagePicker } from 'expo';
+import { ImagePicker, Permissions } from 'expo';
 
 export default class NotePicture extends React.Component{
   state = {
     image: null,
+	permission: false,
   };
 
   render() {
@@ -31,17 +32,26 @@ export default class NotePicture extends React.Component{
 			this.props.sfl();
 		}
 	}
+	
 
   pickImage = async () => {
-    let result = await ImagePicker.launchImageLibraryAsync({
-      allowsEditing: false,
-    });
+	if(this.state.permission==false){
+		const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+		if(status == "granted"){
+			this.setState({permission: true});
+		}
+		
+	}
+	if(this.state.permission==true){
+		let result = await ImagePicker.launchImageLibraryAsync({
+		allowsEditing: false,
+		});
 
-    if (!result.cancelled) {
-      this.setState({ image: result.uri });
-	  this.props.sendImageUp(result.uri);
+		if (!result.cancelled) {
+			this.setState({ image: result.uri });
+			this.props.sendImageUp(result.uri);
 	  
-    }
-	
+		}
+	}
   };
 }
