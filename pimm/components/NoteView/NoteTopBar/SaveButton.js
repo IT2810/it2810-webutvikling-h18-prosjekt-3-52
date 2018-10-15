@@ -17,6 +17,10 @@ export default class SaveButton extends React.Component{
   }
   
   	saveNote = async () => {
+		if(this.props.title==""){
+			alert("Please enter a title");
+			return;
+		}
 		
 		let obj={
 			title: this.props.title,
