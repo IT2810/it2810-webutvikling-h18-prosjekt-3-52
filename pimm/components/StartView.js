@@ -38,7 +38,6 @@ export default class StartView extends React.Component{
 	
 	
 	deleteNote = async (key) =>{
-		console.log("Deleting item with key: "+key);
 		try{
 			await AsyncStorage.removeItem(key);
 			console.log("Key deleted...")

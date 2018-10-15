@@ -19,9 +19,7 @@ test('saving', ()=>{
 	const saveNote = jest.fn();
 	saveNote()
 	expect(saveNote).toHaveBeenCalled()
-	expect(sb.saveNote()).toBeDefined();
-	
-	
+	expect(sb.saveNote()).toBeDefined();	
 	
 	
 });

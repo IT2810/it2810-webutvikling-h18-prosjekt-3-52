@@ -56,7 +56,7 @@ export default class App extends React.Component {
 	
 	
 	render(){
-		console.log(this.state);
+		
 		if(this.state.view===true){
 		return(
 			<ScrollView style={{paddingTop: 22}}>
