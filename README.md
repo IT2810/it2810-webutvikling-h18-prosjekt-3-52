@@ -1,5 +1,7 @@
 (forelpøig)
+
 Prosjekt 3, gruppe 52:
+
 Vi har valgt å lage en notatblokkapplikasjon der man kan lage nye notater, endre på notater og slette notater.
 Det er også mulighet for å legge til et bilde som passer til notatet, som ble løst ved hjelp av et tredjeparts api.
 Appen vår har to hovedviews; StartView og NoteView. NoteView er selve notatsiden der du fyller ut notatet. Det er
