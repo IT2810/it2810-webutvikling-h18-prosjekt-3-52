@@ -23,6 +23,7 @@ exports[`NoteText renders correctly 1`] = `
         "width": 280,
       }
     }
+    value=""
   />
 </View>
 `;

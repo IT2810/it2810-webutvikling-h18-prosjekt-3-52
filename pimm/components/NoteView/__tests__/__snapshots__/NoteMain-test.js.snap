@@ -25,6 +25,7 @@ exports[`NoteMain renders correctly 1`] = `
           "width": 280,
         }
       }
+      value=""
     />
   </View>
   <View
@@ -49,6 +50,7 @@ exports[`NoteMain renders correctly 1`] = `
           "width": 280,
         }
       }
+      value=""
     />
   </View>
   <View
