@@ -14,10 +14,13 @@ api som gir oss tilgang til kamerarullen. Sammen med dette brukte vi også Permi
 for å spørre brukeren om tillatelse før appen kan åpne kamerarullen.
 Under vises komponentstrukturen vår:
                    App
-          StartView NoteView
-                    NoteTopBar NoteMain
-        BackButton SaveButton NoteTitle NoteText NotePicture
-(tegner treet ordentlig senere)
+               /          \
+          StartView        NoteView
+                        /            \
+                 NoteTopBar           NoteMain
+              /      \              /     |     \
+    BackButton    SaveButton   NoteTitle NoteText NotePicture
+
 Dokumentasjon til Permissions og ImagePicker:
 https://docs.expo.io/versions/v30.0.0/sdk/imagepicker
 https://docs.expo.io/versions/v30.0.0/sdk/permissions
