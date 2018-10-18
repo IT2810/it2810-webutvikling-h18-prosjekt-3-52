@@ -13,19 +13,23 @@ For å kunne legge til bilder brukte vi ImagePicker-api’et fra Expo. Det er ga
 api som gir oss tilgang til kamerarullen. Sammen med dette brukte vi også Permissions-api’et (også fra Expo) 
 for å spørre brukeren om tillatelse før appen kan åpne kamerarullen.
 Under vises komponentstrukturen vår:
-                   App
-               /          \
-          StartView        NoteView
-                        /            \
-                 NoteTopBar           NoteMain
-              /      \              /     |     \
-    BackButton    SaveButton   NoteTitle NoteText NotePicture
+
+                                               App
+                                          /          \
+                                  StartView        NoteView
+                                                 /            \
+                                           NoteTopBar           NoteMain
+                                        /      \              /     |     \
+                              BackButton    SaveButton   NoteTitle NoteText NotePicture
 
 Dokumentasjon til Permissions og ImagePicker:
+
 https://docs.expo.io/versions/v30.0.0/sdk/imagepicker
+
 https://docs.expo.io/versions/v30.0.0/sdk/permissions
 
 Testing:
+
 Brukertester fikk vi gjennomført på Android, både nettbrett og mobil. 
 Vi fikk dessverre ikke testet på ios, så vi kan ikke bekrefte hvordan appen kjører der. 
 All koden vår skal være plattformuavhengig og det eneste hensynet vi måtte ta til ios var å 
@@ -35,6 +39,7 @@ ble rendret riktig, så vi opprettet snapshot-tester for alle komponentene. Elle
 funksjonene som at states ble endret på riktig måte og at props ble sendt.
 
 PROBLEM:
+
 I StartView støtte vi på et problem som gjorde at testingen ble vanskelig.
 Når Jest skulle rendre komponenten, så ville testen aldri fullføre. Vi fikk ikke beskjed om 
 at testen feilet, men testen bare fortsatte å kjøre i lang tid. (Testene kjører på til 
