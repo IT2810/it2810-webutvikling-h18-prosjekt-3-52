@@ -2,36 +2,41 @@ import React from 'react';
 import Title from './NoteMain/Title.js';
 import NoteText from './NoteMain/NoteText.js';
 import NotePicture from './NoteMain/NotePicture.js';
-import { View } from 'react-native';
+import { View, Button } from 'react-native';
 
 export default class NoteMain extends React.Component{
-	constructor(props){
-		super(props);
-		this.state={
-			title: "",
-			note: "",
-			image: "",
-		}
-	}
-	
-	getTitle(newTitle){
-		this.setState({title: newTitle});
-	}
-	getNote(newNote){
-		this.setState({note: newNote});
-	}
-	getImage(newImage){
-		this.setState({image: newImage});
-	}
-	
-	render(){
-		return(
-		<View>
-		<Title sendTitleUp={this.getTitle.bind(this)}/>
-		<NoteText sendNoteUp={this.getNote.bind(this)}/>
-		<NotePicture sendImageUp={this.getImage.bind(this)}/>
-		</View>
-		
-		);
-	}
+    constructor(props){
+        super(props);
+        this.state={
+            title: "",
+            note: "",
+            image: "",
+        }
+    }
+
+
+    render(){
+        return(
+            <View>
+                <Title
+                    sendTitleUp={this.props.sendTitleUp}
+                    title={this.props.title} fl={this.props.fl}
+                    sfl={this.props.sfl}/>
+
+                <NoteText
+                    sendNoteUp={this.props.sendNoteUp}
+                    note={this.props.note}
+                    fl={this.props.fl}
+                    sfl={this.props.sfl}/>
+
+                <NotePicture
+                    sendImageUp={this.props.sendImageUp}
+                    image={this.props.image}
+                    fl={this.props.fl}
+                    sfl={this.props.sfl}/>
+                
+            </View>
+
+        );
+    }
 }

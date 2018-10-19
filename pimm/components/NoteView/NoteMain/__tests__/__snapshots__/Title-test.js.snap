@@ -24,6 +24,7 @@ exports[`title renders correctly 1`] = `
         "width": 280,
       }
     }
+    value=""
   />
 </View>
 `;
