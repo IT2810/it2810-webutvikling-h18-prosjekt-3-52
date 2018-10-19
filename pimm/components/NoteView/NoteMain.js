@@ -34,7 +34,7 @@ export default class NoteMain extends React.Component{
                     image={this.props.image}
                     fl={this.props.fl}
                     sfl={this.props.sfl}/>
-                
+
             </View>
 
         );

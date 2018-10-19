@@ -65,13 +65,13 @@ export default class StartView extends React.Component{
         this.getKeys();
     }
 
-     render(){
+    render(){
 
         const keys=this.state.keys;
         const notes = keys.map((key) =>
             <View key = {key}
-                style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
-                    paddingRight: 40, paddingLeft: 40, paddingTop: 8, paddingBottom: 8, borderTopWidth: 1}}>
+                  style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
+                      paddingRight: 40, paddingLeft: 40, paddingTop: 8, paddingBottom: 8, borderTopWidth: 1}}>
 
                 <TouchableOpacity>
                     <Text

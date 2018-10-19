@@ -22,7 +22,7 @@ export default class NotePicture extends React.Component{
                     />
 
                     <View style={{ borderColor: 'black', borderWidth: 1, backgroundColor: 'beige', width: 280, height: 300 }}>
-                        
+
                     </View>
                 </View>
             );
