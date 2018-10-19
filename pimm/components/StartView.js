@@ -61,9 +61,12 @@ export default class StartView extends React.Component{
         }
     };
 
-
-    render(){
+    componentDidMount() {
         this.getKeys();
+    }
+
+     render(){
+
         const keys=this.state.keys;
         const notes = keys.map((key) =>
             <View key = {key}
