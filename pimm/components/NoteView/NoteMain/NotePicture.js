@@ -12,7 +12,7 @@ export default class NotePicture extends React.Component{
         let { image } = this.state;
 
 
-        if (image === null) {
+        if (image === null || image === '') {
             return (
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                     <Button
