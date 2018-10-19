@@ -32,7 +32,9 @@ export default class SaveButton extends React.Component{
             image: this.props.image
         };
         try {
-            await AsyncStorage.removeItem(this.props.oldTitle);
+            if (this.props.oldTitle !== '') {
+                await AsyncStorage.removeItem(this.props.oldTitle);
+            }
             await AsyncStorage.setItem(this.props.title, JSON.stringify(obj));
 
         } catch (error) {
