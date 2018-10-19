@@ -28,14 +28,14 @@ export default class App extends React.Component {
         this.setState({view: !this.state.view});
     }
 
-    getTitle(newTitle){
+    setTitle(newTitle){
         this.setState({title: newTitle});
     }
-    getNote(newNote){
+    setNote(newNote){
         this.setState({note: newNote});
 
     }
-    getImage(newImage){
+    setImage(newImage){
         this.setState({image: newImage});
 
     }
@@ -62,9 +62,9 @@ export default class App extends React.Component {
                 <ScrollView style={{paddingTop: 22}}>
                     <StartView
                         changeView={this.changeView.bind(this)}
-                        sendTitleUp={this.getTitle.bind(this)}
-                        sendNoteUp={this.getNote.bind(this)}
-                        sendImageUp={this.getImage.bind(this)}
+                        sendTitleUp={this.setTitle.bind(this)}
+                        sendNoteUp={this.setNote.bind(this)}
+                        sendImageUp={this.setImage.bind(this)}
                         sfl={this.fromLoadedT.bind(this)}
                         changeOldTitle={this.changeOldTitle.bind(this)}/>
                 </ScrollView>
@@ -75,9 +75,9 @@ export default class App extends React.Component {
                     <NoteView
                         oldTitle={this.state.oldTitle}
                         changeView={this.changeView.bind(this)}
-                        sendTitleUp={this.getTitle.bind(this)}
-                        sendNoteUp={this.getNote.bind(this)}
-                        sendImageUp={this.getImage.bind(this)}
+                        sendTitleUp={this.setTitle.bind(this)}
+                        sendNoteUp={this.setNote.bind(this)}
+                        sendImageUp={this.setImage.bind(this)}
                         title={this.state.title} note={this.state.note}
                         image={this.state.image} fl={this.state.fromLoaded}
                         sfl={this.fromLoadedF.bind(this)}/>

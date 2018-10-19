@@ -40,9 +40,9 @@ test('changing states', ()=>{
     const fromLoadedF = jest.fn();
     const fromLoadedT = jest.fn();
     const changeOldTitle = jest.fn();
-    a.getNote("test");
-    a.getImage("test");
-    a.getTitle("test");
+    a.setNote("test");
+    a.setImage("test");
+    a.setTitle("test");
     a.changeOldTitle("test");
     expect(a.state.note).toBe("test");
     expect(a.state.title).toBe("test");
