@@ -66,7 +66,7 @@ export default class StartView extends React.Component{
         this.getKeys();
         const keys=this.state.keys;
         const notes = keys.map((key) =>
-            <View
+            <View key = {key}
                 style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
                     paddingRight: 40, paddingLeft: 40, paddingTop: 8, paddingBottom: 8, borderTopWidth: 1}}>
 
