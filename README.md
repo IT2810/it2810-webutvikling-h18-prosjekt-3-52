@@ -1,4 +1,4 @@
-(forelpøig)
+
 
 Prosjekt 3, gruppe 52:
 
